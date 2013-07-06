@@ -7,6 +7,14 @@ sudo apt-get install -y git-core
 git config --global user.name = "Alex Forsythe"
 git config --global user.email = "awforsythe@gmail.com"
 git config --global core.editor "vim"
+git config --color.ui auto
+
+# Install and authenticate heroku
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+mkdir ~/.ssh
+ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
+heroku login
+heroku keys:add
 
 # Install nvm: node-version manager
 # https://github.com/creationix/nvm
